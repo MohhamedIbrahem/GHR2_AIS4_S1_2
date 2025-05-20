@@ -1,117 +1,93 @@
 # GHR2_AIS4_S1_2
 
- Healthcare Billing Prediction Model
-This repository contains a machine learning model that predicts the billing amount for patients based on their medical and demographic information. The goal is to assist healthcare providers, insurers, and analysts in forecasting costs, optimizing resources, and identifying financial trends in patient care.
- Project Overview
-Healthcare costs can vary significantly based on several factors such as age, test results, diagnosis, and more. This model uses supervised learning techniques to predict the billing amount for a sick person, helping improve transparency and cost management in the healthcare system.
+Healthcare Billing Amount Prediction
+This repository contains a machine learning model that predicts the billing amount for a patient based on their medical and demographic attributes. The goal is to support healthcare providers and insurers in forecasting patient costs, optimizing resources, and understanding cost drivers.
 
-🚀 Features
-Predicts medical billing amount based on patient data
+📌 Project Overview
+Medical billing can be influenced by factors such as age, medical condition, insurance provider, and test results. This project uses a supervised machine learning model to estimate the expected billing amount for a patient based on historical data.
 
-Supports integration via a REST API (Flask/FastAPI)
+🧾 Dataset Features
+The dataset includes 55,500 patient records with the following columns:
 
-Preprocessing and feature engineering included
-
-Trained and evaluated using real-world healthcare data
-
-📊 Input Features
-The model uses features such as:
-
-Age
-
-Gender
-
-Diagnosis/Test Results
-
-Number of Visits or Treatments
-
-Insurance Type
-
-Hospital Location
-
-Length of Stay
-
-Any other relevant attributes in your dataset
-
-(You can list the actual features from your dataset here.)
+Feature	Description
+Age	Patient's age
+Gender	Male / Female
+Blood Type	Patient's blood group
+Medical Condition	Primary diagnosis (e.g., Cancer, Diabetes, Obesity)
+Date of Admission	Admission date
+Doctor	Attending physician
+Hospital	Hospital or facility name
+Insurance Provider	Patient’s insurance (e.g., Medicare, Aetna)
+Room Number	Room number during stay
+Admission Type	Elective, Emergency, Urgent
+Discharge Date	Date of discharge
+Medication	Prescribed medication
+Test Results	Lab test results (Normal, Abnormal, Inconclusive)
+Billing Amount	💰 Target variable to predict
 
 🧠 Model
-The model is trained using [your chosen ML algorithm, e.g., XGBoost, Random Forest, Linear Regression] and evaluated using metrics like:
+Task: Regression (predicting a continuous value)
 
-Mean Absolute Error (MAE)
+Target: Billing Amount
 
-Root Mean Squared Error (RMSE)
+Models used: (e.g., Linear Regression, XGBoost, Random Forest)
 
-R² Score
+Evaluation metrics: MAE, RMSE, R²
+
+🛠️ Technologies
+Python, Pandas, NumPy
+
+Scikit-learn / XGBoost
+
+FastAPI or Flask (for API deployment)
+
+Matplotlib / Seaborn (for visualization)
 
 📁 Project Structure
-bash
+graphql
 نسخ
 تحرير
 .
-├── data/                 # Raw and processed datasets
-├── models/               # Trained models and serialized files
-├── app/                  # API or frontend code
-├── notebooks/            # Jupyter Notebooks for EDA and model training
-├── requirements.txt      # Dependencies
-├── README.md             # Project documentation
-└── main.py               # Entry-point (e.g., FastAPI or Flask app)
-🔧 Installation
-bash
-نسخ
-تحرير
-git clone https://github.com/yourusername/healthcare-billing-prediction.git
-cd healthcare-billing-prediction
-pip install -r requirements.txt
-▶️ Usage
-To run the API locally:
-
-bash
-نسخ
-تحرير
-python main.py
-Or access the /predict endpoint with:
-
-json
-نسخ
-تحرير
+├── app/                  # Web API using Flask or FastAPI
+├── data/                 # Original and processed datasets
+├── models/               # Saved machine learning models
+├── notebooks/            # EDA and model training notebooks
+├── requirements.txt      # Python dependencies
+├── README.md             # Documentation
+└── main.py               # API main entry point
+▶️ Example Usage (API)
 POST /predict
-{
-  "age": 45,
-  "diagnosis_code": "D123",
-  "test_result": 7.5,
-  ...
-}
-Response:
+Input JSON:
 
 json
 نسخ
 تحرير
 {
-  "predicted_billing_amount": 1243.50
+  "Age": 45,
+  "Gender": "Female",
+  "Blood Type": "O+",
+  "Medical Condition": "Diabetes",
+  "Insurance Provider": "Medicare",
+  "Admission Type": "Urgent",
+  "Test Results": "Normal"
 }
-✅ Evaluation
-Include evaluation metrics and visualizations here, e.g., plots of actual vs. predicted values, error distribution, etc.
+Output:
 
-🛠️ Technologies Used
-Python
+json
+نسخ
+تحرير
+{
+  "predicted_billing_amount": 18750.63
+}
+📉 Evaluation
+Evaluation results, feature importance, and error distributions are provided in the notebooks/ folder. (You can also insert charts and performance screenshots here.)
 
-Scikit-learn / XGBoost / LightGBM
-
-FastAPI / Flask
-
-Pandas, NumPy, Matplotlib, Seaborn
-
-Docker (optional)
-
-📚 Dataset
-Replace this with your dataset source or description.
-
-“This model was trained on anonymized healthcare data, ensuring privacy and HIPAA compliance.”
+📚 Data Source
+Synthetic healthcare dataset with anonymized data.
+⚠️ This dataset is for educational and research purposes only. It does not contain real patient data.
 
 ⚠️ Disclaimer
-This project is intended for research and educational purposes only. It should not be used in real medical or billing decisions without proper validation and regulatory approvals.
-
+This model is not approved for clinical use and should not be used for making actual billing or healthcare decisions. Always consult domain experts before applying machine learning in sensitive fields like healthcare.
 👨‍💻 Author
 Mohammed Al-Murshidi – Your GitHub Profile
 
