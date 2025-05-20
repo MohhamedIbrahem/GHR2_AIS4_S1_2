@@ -39,7 +39,7 @@ The dataset includes **55,500 patient records** with the following columns:
 
 - Python, Pandas, NumPy
 - Scikit-learn / XGBoost
-- FastAPI or Flask (for API deployment)
+- Streamlit (for API deployment)
 - Matplotlib / Seaborn (for visualization)
 
 ## 📁 Project Structure
@@ -84,13 +84,6 @@ The dataset includes **55,500 patient records** with the following columns:
 
 Evaluation results, feature importance, and error distributions are provided in the `notebooks/` folder.
 
-## 📚 Data Source
 
-Synthetic healthcare dataset with anonymized data.  
-⚠️ This dataset is for **educational and research purposes only**. It does not contain real patient data.
-
-## ⚠️ Disclaimer
-
-This model is **not approved for clinical use** and should not be used for making actual billing or healthcare decisions. Always consult domain experts before applying machine learning in sensitive fields like healthcare.
 
 
