@@ -46,13 +46,13 @@ The dataset includes **55,500 patient records** with the following columns:
 
 ```
 .
-├── app/                  # Web API using Flask or FastAPI
+├── app/                  # Web API using Streamlit
 ├── data/                 # Original and processed datasets
 ├── models/               # Saved machine learning models
 ├── notebooks/            # EDA and model training notebooks
 ├── requirements.txt      # Python dependencies
 ├── README.md             # Documentation
-└── main.py               # API main entry point
+└── streamlit_app.py               # API main entry point
 ```
 
 ## ▶️ Example Usage (API)
@@ -93,11 +93,4 @@ Synthetic healthcare dataset with anonymized data.
 
 This model is **not approved for clinical use** and should not be used for making actual billing or healthcare decisions. Always consult domain experts before applying machine learning in sensitive fields like healthcare.
 
-## 👨‍💻 Author
 
-- **Mohammed Al-Murshidi**  
-[GitHub Profile](https://github.com/yourusername)
-
-## 📄 License
-
-This project is licensed under the MIT License.
